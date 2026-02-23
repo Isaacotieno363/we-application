@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Academic Dashboard</title>
+    <link rel="stylesheet" href="web.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <!-- Live Digital Clock -->
+        <div class="clock-container">
+            <div id="digitalClock" class="digital-clock">00:00:00</div>
+        </div>
+
+        <!-- Animated Heading -->
+        <h1 id="animatedHeading" class="animated-heading">SCHOOL OF COMPUTING & INFORMATION TECHNOLOGY</h1>
+
+        <!-- Student Form -->
+        <form id="studentForm">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="text" id="regNo" placeholder="Registration Number" required>
+            <input type="number" id="cat" placeholder="CAT Marks (0-30)" required>
+            <input type="number" id="exam" placeholder="Exam Marks (0-70)" required>
+            <button type="submit"> Add Student</button>
+        </form>
+
+        <h3 id="message"></h3>
+
+        <!-- Dashboard Summary -->
+        <div class="dashboard">
+            <p><strong>Class Average</strong> <span id="average">0</span></p>
+            <p><strong>Pass</strong> <span id="passCount">0</span></p>
+            <p><strong>Fail</strong> <span id="failCount">0</span></p>
+            <button onclick="sortStudents()"> Sort by Total Marks</button>
+        </div>
+
+        <!-- Results Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th> Name</th>
+                    <th> Reg No</th>
+                    <th> Total</th>
+                    <th> Grade</th>
+                    <th> Action</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="web.js"></script>
+
+</body>
+</html>

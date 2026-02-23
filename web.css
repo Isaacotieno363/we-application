@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    background: #1a2634;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Main Container */
+.main-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* Live Digital Clock Styling */
+.clock-container {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.digital-clock {
+    font-size: 56px;
+    font-weight: 700;
+    color: #00ff88;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 20px #00ff88, 0 0 40px #00ff88;
+    letter-spacing: 8px;
+    animation: glow 1.5s ease-in-out infinite;
+    margin-bottom: 15px;
+}
+
+.date-display {
+    font-size: 18px;
+    color: #e0e0ff;
+    margin-top: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Glow Animation */
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 20px #00ff88, 0 0 40px #00ff88;
+    }
+    50% {
+        text-shadow: 0 0 40px #00ff88, 0 0 60px #00ff88, 0 0 80px #00ff88;
+    }
+}
+
+/* Sideways Movement Animation */
+@keyframes swayHorizontal {
+    0%, 100% {
+        transform: translateX(-30px);
+    }
+    50% {
+        transform: translateX(30px);
+    }
+}
+
+
+/* Animated Heading */
+.animated-heading {
+    text-align: center;
+    animation: swayHorizontal 2.5s ease-in-out infinite, colorChange 3s ease-in-out infinite;
+    color: white;
+    margin: 30px 0 40px;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Container */
+#studentForm {
+    background: darkgray;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px black;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+form input {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 15px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #30449c;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    background-color: #f8f9ff;
+}
+
+form input::placeholder {
+    color: burlywood;
+}
+
+button {
+    padding: 12px 28px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    min-width: 150px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(102, 126, 234, 0.6);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+#studentForm button {
+    flex: 1;
+    min-width: 150px;
+}
+
+/* Message Alert */
+#message {
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    min-height: 20px;
+    animation: slideIn 0.3s ease;
+}
+
+#message:not(:empty) {
+    background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+    color: #1a5e5f;
+    box-shadow: 0 4px 15px rgba(132, 250, 176, 0.3);
+}
+
+/* Table Styling */
+table {
+    margin-top: 30px;
+    width: 100%;
+    background-color: white;
+    border-collapse: collapse;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+table th {
+    padding: 20px;
+    color: burlywood;
+    font-weight: 600;
+    text-align: left;
+    letter-spacing: 1px;
+}
+
+table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid white;
+    transition: all 0.3s ease;
+}
+
+
+
+table tbody tr:hover {
+    background-color: #f8f9ff;
+    transform: scale(1.01);
+}
+
+
+/* Dashboard Summary */
+.dashboard {
+    margin-top: 30px;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.dashboard p {
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.dashboard p:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard span {
+    font-size: 28px;
+    font-weight: 700;
+    color: #667eea;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(102, 126, 234, 0.2);
+}
+
+.dashboard button {
+    grid-column: 1 / -1;
+    padding: 15px 30px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.topStudent {
+    background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%) !important;
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(255, 216, 155, 0.4);
+}
+
+.topStudent:hover {
+    background: linear-gradient(135deg, #ffe5b4 0%, #2a5f8f 100%) !important;
+}
